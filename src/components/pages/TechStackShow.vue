@@ -47,7 +47,7 @@ export default {
         };
     },
     created() {
-        const id = this.$route.params.id; // Aqui talvez tenha .data
+        const id = this.$route.params.id; 
         axios.get(`/api/Technologies/${id}`)
         .then(response => {
             let technologyInfo = response.data.data
