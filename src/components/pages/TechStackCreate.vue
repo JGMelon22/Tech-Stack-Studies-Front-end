@@ -61,7 +61,7 @@
                     <button
                         @click="handleSave()"
                         :disabled="isSaving"
-                        type=""button
+                        type="button"
                         class="btn btn-outline-primary mt-3">
                         Save Learned Technology
                     </button>
@@ -86,6 +86,7 @@ export default {
             technology: {
                 name: '',
                 isFrameworkOrLib: false,
+                currentVersion: 0.0,
                 category: '',
                 skillSet: ''
             },
