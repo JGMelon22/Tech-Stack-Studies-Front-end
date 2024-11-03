@@ -67,8 +67,8 @@ export default {
         this.fetchTechStackList();
     },
     methods: {
-        fetchTechStackList() {
-            axios.get('/api/Technologies')
+       async fetchTechStackList() {
+           await axios.get('/api/Technologies')
                 .then(response => {
                     this.technologies = response.data.data;
                     return response;
