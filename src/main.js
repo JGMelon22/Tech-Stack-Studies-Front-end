@@ -4,7 +4,7 @@ import axios from 'axios'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { createRouter, createWebHistory } from 'vue-router'
-// import TechStackList from './components/pages/TechStackList'
+import TechStackList from './components/pages/TechStackList.vue'
 import TechStackCreate from './components/pages/TechStackCreate.vue'
 // import TechStackEdit from './components/pages/TechStackEdit'
 // import TechStackShow from './components/pages/TechStackShow'
@@ -16,8 +16,8 @@ const router = createRouter({
     routes: [
         { path: '/', component: TechStackList },
         { path: '/create', component: TechStackCreate },
-        { path: '/edit/:id', component: TechStackEdit },
-        { path: '/show/:id', component: TechStackShow },
+        // { path: '/edit/:id', component: TechStackEdit },
+        // { path: '/show/:id', component: TechStackShow },
     ],
 });
 
