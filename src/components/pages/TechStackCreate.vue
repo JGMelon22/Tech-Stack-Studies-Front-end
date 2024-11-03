@@ -20,13 +20,14 @@
                             name="name"/>
                     </div>
                     <div class="form-group">
-                        <label htmlFor="isFrameworkOrLib">Is a Framework or a Lib?</label>
+                        <label htmlFor="isFrameworkOrLib">Is a Framework or a Lib?</label> &nbsp;
                         <input 
                             v-model="technology.isFrameworkOrLib"
                             type="checkbox"
-                            class="form-control"
+                            class="form-check-input"
                             id="isFrameworkOrLib"
-                            name="isFrameworkOrLib"/>
+                            name="isFrameworkOrLib"
+                            :checked="technology.isFrameworkOrLib"/>
                     </div>
                     <div class="form-group">
                         <label htmlFor="currentVersion">Current Version</label>
@@ -49,13 +50,13 @@
                             placeholder="Enter a category (e.g. Backend, Frontend, Devops, Database)"/>
                     </div>
                     <div class="form-group">
-                        <label htmlFor="skillSet">SkillSet</label>
+                        <label htmlFor="skillLevel">Skill Level</label>
                         <input 
-                            v-model="technology.skillSet"
+                            v-model="technology.skillLevel"
                             type="text"
                             class="form-control"
-                            id="skillSet"
-                            name="skillSet"
+                            id="skillLevel"
+                            name="skillLevel"
                             placeholder="Enter a category (e.g. Beginner, Skilled, Expert"/>
                     </div>
                     <button
@@ -88,7 +89,7 @@ export default {
                 isFrameworkOrLib: false,
                 currentVersion: 0.0,
                 category: '',
-                skillSet: ''
+                skillLevel: ''
             },
             isSaving: false,
         };
@@ -96,7 +97,7 @@ export default {
     methods: {
         handleSave() {
             this.isSaving = true
-            axios.post('api/Technologies/', this.technology)
+            axios.post('api/Technologies', this.technology)
                 .then(response => {
                         Swal.fire({
                             icon: 'success',
@@ -108,7 +109,7 @@ export default {
                         this.technology.name = ""
                         this.technology.isFrameworkOrLib = false
                         this.technology.category = ""
-                        this.technology.skillSet = ""
+                        this.technology.skillLevel = ""
                         return response
                 })
                 .catch(error => {
