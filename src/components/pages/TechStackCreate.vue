@@ -22,15 +22,24 @@
                         <input v-model="technology.currentVersion" type="number" min="0.1" class="form-control"
                             id="currentVersion" name="currentVersion" />
                     </div>
-                    <div class="form-group">
+                    <div>
                         <label htmlFor="category">Category</label>
-                        <input v-model="technology.category" type="text" class="form-control" id="category"
-                            name="category" placeholder="Enter a category (e.g. Backend, Frontend, Devops, Database)" />
+                        <select class="form-select form-select-sm w-25" v-model="technology.category">
+                            <option disabled value="">Please select one</option>
+                            <option value="Frontend">Frontend</option>
+                            <option value="Backend">Backend</option>
+                            <option value="Devops">Devops</option>
+                            <option value="Database">Database</option>
+                        </select>
                     </div>
-                    <div class="form-group">
+                    <div>
                         <label htmlFor="skillLevel">Skill Level</label>
-                        <input v-model="technology.skillLevel" type="text" class="form-control" id="skillLevel"
-                            name="skillLevel" placeholder="Enter a category (e.g. Beginner, Skilled, Expert" />
+                        <select class="form-select form-select-sm w-25" v-model="technology.skillLevel">
+                            <option disabled value="">Please select one</option>
+                            <option value="Frontend">Beginner</option>
+                            <option value="Skilled">Skilled</option>
+                            <option value="Expert">Expert</option>
+                        </select>
                     </div>
                     <button @click="handleSave()" :disabled="isSaving" type="button"
                         class="btn btn-outline-primary mt-3">
@@ -76,8 +85,8 @@ export default {
                         timer: 1500
                     })
                     this.isSaving = false
-                    this.technology.name = String.e
-                    this.currentVersion = 0.0;
+                    this.technology.name = ""
+                    this.technology.currentVersion = 0.0;
                     this.technology.isFrameworkOrLib = false
                     this.technology.category = ""
                     this.technology.skillLevel = ""

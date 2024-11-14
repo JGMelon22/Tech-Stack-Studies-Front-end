@@ -28,7 +28,7 @@
                                 <td>{{ technology.currentVersion }}</td>
                                 <td>{{ technology.category }}</td>
                                 <td>{{ technology.skillLevel }}</td>
-                                <td>
+                                <td class="text-center">
                                     <router-link :to="`/show/${technology.id}`"
                                         class="btn btn-outline-info mx-1">Details</router-link>
                                     <router-link :to="`/edit/${technology.id}`"
