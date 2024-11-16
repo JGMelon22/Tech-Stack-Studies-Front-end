@@ -8,7 +8,10 @@
                     </router-link>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-hover">
+                    <div v-if="technologies.length === 0" class="text-center p-3">
+                        <p class="h5 text-muted">No technologies found</p>
+                    </div>
+                    <table v-else class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -93,7 +96,7 @@ export default {
                                 icon: 'success',
                                 title: 'Technology deleted successfully!',
                                 showConfirmButton: false,
-                                time: 1500
+                                timer: 1500
                             })
                             this.fetchTechStackList();
                             return response
