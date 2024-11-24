@@ -36,7 +36,7 @@
                         <label htmlFor="skillLevel">Skill Level</label>
                         <select class="form-select form-select-sm w-25" v-model="technology.skillLevel">
                             <option disabled value="">Please select one</option>
-                            <option value="Frontend">Beginner</option>
+                            <option value="Beginner">Beginner</option>
                             <option value="Skilled">Skilled</option>
                             <option value="Expert">Expert</option>
                         </select>
